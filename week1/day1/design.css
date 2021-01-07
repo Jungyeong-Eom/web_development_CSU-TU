@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+.skeleton {
+    width: 100%;
+    height: 300px;
+    border:0px solid #000;
+}
+.left {
+    width: 60%;
+    float: left;
+    box-sizing: border-box
+}
+.right {
+    width: 40%;
+    float:right;
+    box-sizing: border-box;
+}
+.title {
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 0.6vw;
+    background-image:url('bluebanner.png')
+}
+h1.title {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4vw;
+    padding-top: 2.5vw;
+    text-align: left;
+}
+#banner {
+    text-decoration:none;
+}
+.item {
+    color:black;
+    font-family: 'Hanalei Fill', cursive;
+    font-size: 2.0vw;
+    text-align: left;
+    flex-direction: row;
+}
+.content {
+    color:black;
+    font-family: 'Merriweather', serif;
+    font-size: 0.9vw ;
+    text-align: left;
+    margin-left:0.3vw;
+}
+.container {
+    margin-top:0px;
+    display: flex;
+    border:solid 0.24vw;
+    flex-direction: column;
+}
+.user_container {
+    display:flex;
+    width:57vw;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0.2vw;
+    border:solid 0.15vw;
+    color:black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9vw;
+}
+#face {
+    width:8vw;
+    height:6vw;
+}
+.user_info {
+    margin-top:0px;
+    color:black;
+    font-family: 'Merriweather', serif;
+    font-size: 0.8vw;
+}
+.deco {
+    font-family: 'Staatliches', cursive;
+    font-size:2.1vw;
+}
+.ad {
+    width: 33vw;
+    height: 16vw;
+    margin-top: 0px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('darkbluebanner.png')
+}
+h1.ad {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.48vw;
+    text-align: left;
+}
+.node {
+    width: 18vw;
+    height: 4.95vw;
+    margin-top: 0.3px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('greenbanner.png')
+}
+h1.node {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.5vw;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}
+.python {
+    width: 21vw;
+    height: 5.2vw;
+    margin-top: 0.3px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('orangebanner.jpg')
+}
+h1.python {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.5vw;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}
+.javascript {
+    width: 25vw;
+    height: 5.2vw;
+    margin-top: 0.3px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('purplebanner.png')
+}
+h1.javascript {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.5vw;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}
+.database {
+    width: 30vw;
+    height: 5.2vw;
+    margin-top: 0.3px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('deepdarkbluebanner.png')
+}
+h1.database {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.5vw;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}
+.tomb {
+    width: 35vw;
+    height: 5.1vw;
+    margin-top: 0.3px;
+    margin-bottom: 0vw;
+    margin-left: 0.4vw;
+    background-image:url('brownbanner.png')
+}
+h1.tomb {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 4.5vw;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}

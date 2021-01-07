@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+html {
+    background-color: #393D3F
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.title {
+    text-align: center;
+    color: white;
+}
+.sign-1 {
+    color: yellow;
+}
+.sign-2 {
+    color: orange;
+}
+.font-size {
+    font-size: 110px;
+}
+.font {
+    font-family: 'Oswald', sans-serif;
+}
+.box {
+    background-color: white;
+    border: none;
+    border-radius: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.text {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 4vh;
+    margin-bottom:3vh;
+    font-size: 40px;
+}
+.margin-left-right {
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+.margin-top-bottom {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.input-user {
+    margin-bottom: 1.2vh;
+}
+#user {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+}
+#pwd {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+}
+.input {
+    margin-bottom: 5vh;
+}
+.btn {
+    margin-bottom: 1.5vh;
+}
+#btn {
+    border-radius: 4em;
+    background-color: #66C3FF;
+    color: white;
+    width: 150px;
+    height: 70px;
+    font-size: 20px;
+    border:none;
+}
+.info {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 3vh;
+}
+#signup {
+    text-decoration: none;
+}
