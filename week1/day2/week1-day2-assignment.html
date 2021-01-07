@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .three-containers{
+                margin: 0 auto;
+                width: 50%;
+            }
+            .child-container{
+                background-color: #2492eb;
+                margin: 10px;
+                height: 100px;
+                display: inline-block;
+                width: 100px;
+                border: black 3px solid
+
+            }
+            .outer {
+                background-color: #2492eb;
+                margin: 10px;
+                height: 100px;
+                display: block;
+                width: 100px;
+                border: black 3px solid
+            }
+            .inner {
+                background-color: #86e69a;
+                margin: auto;
+                height: 50px;
+                width: 50px;
+                border: black 3px solid;
+                position: relative;
+                top: 23px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Horizontal Containers</h1>
+        <div class="three-containers">
+            <div class="child-container"></div>
+            <div class="child-container"></div>
+            <div class="child-container"></div>
+        </div>
+        <h1>Embedded Container</h1>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+
+    </body>
+</html>
