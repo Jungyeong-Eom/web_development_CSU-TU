@@ -35,7 +35,7 @@
             color: white;
         }
 
-        #messages-container {
+        #messages-container{
             background-color:  #f5f7f8;
             border-radius: 5px; 
             border: 1px solid lightgray;
@@ -43,8 +43,8 @@
             /* height: some-value; */
         }
 
-        #input-container textarea {
-            height: 100px;
+        #input-container {
+            max-height: 100px;
             margin-top: calc(100vh - 560px);
             margin-bottom: 1vh;
             /* height: some-value; */
@@ -91,9 +91,13 @@
             width: 100%;
         }
 
-   
+         @media screen and (max-height: 650px) {
+          #input-container {
+            max-height: 100px;
+            margin-top: 25px;
+            margin-bottom: 1vh;
+        } 
   
-
       </style>
 
   </head>
