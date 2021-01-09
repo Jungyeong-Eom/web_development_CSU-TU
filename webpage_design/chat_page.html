@@ -48,8 +48,10 @@
             /* height: some-value; */
         }
 
-        #input-container textarea {
+        #input-container textarea{
             height: 100px;
+            margin-top: calc(100vh - 660px);
+            margin-bottom: 1vh;
             background-color:   #2D3047;
             color:white;
             border: 3px solid rgb(53, 112, 199);
@@ -97,7 +99,6 @@
         }
 
         .form-control {
-            margin-top: 300px;
             font-weight: 400;
             height: 100px;
             width: 100%;
@@ -116,6 +117,16 @@
         .sign-2 {
           color: orange;
         }
+
+        @media screen and (max-height: 650px) {
+          #input-container textarea{
+            max-height: 100px;
+            margin-top: 25px;
+            margin-bottom: 1vh;
+            background-color:   #2D3047;
+            color:white;
+            border: 3px solid rgb(53, 112, 199);
+        } 
 
         
         
