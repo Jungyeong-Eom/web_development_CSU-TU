@@ -1,5 +1,4 @@
-CSU&TU collaboration.
-=======================
+# CSU&TU collaboration.
 This is a collaborative team project between CSU and TU.
 ## note
 this is a main branch.
