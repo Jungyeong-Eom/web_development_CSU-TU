@@ -12,7 +12,7 @@ body{
     background-color: rgb(103, 136, 150);
     color: white;
 }
->>>>>>> ggiande-demo
+
 .col-avatar {
     max-width: 50px;
     /* Enforce specific width of the avatar image */
@@ -50,9 +50,8 @@ body{
     font-size: calc(1.3rem + .2vw);
 
 }
-.name{
+.name {
     margin-bottom: 0;
->>>>>>> ggiande-demo
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
@@ -72,5 +71,3 @@ body{
     border-radius: 50%;
     width: 40px; /* Makes the avatar look like a circle */
     }
-}
->>>>>>> ggiande-demo
