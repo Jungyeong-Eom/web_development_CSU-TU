@@ -1,5 +1,21 @@
-body {
+body{
     margin: 0;
+}
+.channels {
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    height: 45px;
+    line-height: 45px;
+} 
+.channels:hover {
+    background-color: rgb(103, 136, 150);
+    color: white;
+}
+>>>>>>> ggiande-demo
+.col-avatar {
+    max-width: 50px;
+    /* Enforce specific width of the avatar image */
 }
 
 #container,
@@ -7,79 +23,54 @@ body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
-
-#navigation-col {
-    background-color:#d7e3ec;
-    flex: 300px 0 0;
-    width:200px;
-    /* Use padding, not margin, because of the background color */
-}
-
-.a:hover {
-    background-color: rgb(103, 136, 150);
-    color: white;
-}
-
-#messages-container{
-    background-color:  #f5f7f8;
-    border-radius: 5px; 
-    border: 1px solid lightgray;
-    padding: 16px;
-    /* height: some-value; */
-}
-
 #input-container {
     max-height: 100px;
-    margin-top: calc(100vh - 560px);
+    margin-top: calc(100vh - 525px);
     margin-bottom: 1vh;
-    /* height: some-value; */
+    text-rendering: auto;
 }
-
-.col-avatar {
-    max-width: 50px;
-    /* Enforce specific width of the avatar image */
+@media screen and (max-height: 650px) {
+    #input-container {
+    max-height: 100px;
+    margin-top: 25px;
+    margin-bottom: 1vh;
+    }
+} 
+.message {
+    background-color: rgb(246, 246, 246);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 15px;
 }
-
-.avatar {
-    border-radius: 50%;
-    width: 40px /* Makes the avatar look like a circle */
-}
-
-.a {
-    padding-left: 10px;
-    height: 45px;
-    line-height: 45px;
-}
-
-.name {
-    margin-bottom: 0;
-}
-
 .mt-3 {
     margin-bottom: 0;
 }
-
 .mt-4 {
-    font-size: 1.3rem;
     font-weight: 600;
-}
+    font-size: calc(1.3rem + .2vw);
 
-.name {
+}
+.name{
+    margin-bottom: 0;
+>>>>>>> ggiande-demo
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
 }
 
-.form-control {
-    font-weight: 400;
-    height: 100px;
-    width: 100%;
+#navigation-items {
+    background-color:#d7e3ec;
+    flex: 250px 0 0;
+    flex-flow: column;
+    /* align-items: center; */
+    display: flex;
+    justify-content: flex-start;
+    max-width: 250px;
+    min-height: 100vh;
 }
-
- @media screen and (max-height: 650px) {
-  #input-container {
-    max-height: 100px;
-    margin-top: 2vh;
-    margin-bottom: 1vh;
-  }
-} 
+.profile-avatar {
+    border-radius: 50%;
+    width: 40px; /* Makes the avatar look like a circle */
+    }
+}
+>>>>>>> ggiande-demo
