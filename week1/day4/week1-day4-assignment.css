@@ -78,7 +78,7 @@ body {
     width: 100%;
 }
 
- @media screen and (max-height: 650px) {
+ @media screen and (max-height: 580px) {
   #input-container {
     max-height: 100px;
     margin-top: 25px;
