@@ -1,0 +1,70 @@
+body{
+	margin: 0;
+}
+.channels {
+	text-decoration: none;
+	color: black;
+	padding-left: 10px;
+	height: 45px;
+	line-height: 45px;
+}
+.channels:hover {
+	background-color: rgb(103, 136, 150);
+	color: white;
+}
+.col-avatar {
+	max-width: 50px;
+	/* Enforce specific width of the avatar image */
+}
+#container,
+#container > .row {
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#input-container {
+	max-height: 100px;
+	margin-top: calc(100vh - 525px);
+	margin-bottom: 1vh;
+    text-rendering: auto;
+}
+@media screen and (max-height: 100vh) {
+	#input-container {
+	max-height: 100px;
+	margin-top: 25px;
+	margin-bottom: 1vh;
+} 
+.message {
+	background-color: rgb(246, 246, 246);
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 15px;
+}
+.mt-3 {
+	margin-bottom: 0;
+}
+.mt-4 {
+	font-weight: 600;
+	font-size: calc(1.3rem + .2vw);
+
+}
+.name{
+	margin-bottom: 0;
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin: 0;
+}
+#navigation-items {
+	background-color:#d7e3ec;
+	flex: 250px 0 0;
+	flex-flow: column;
+	/* align-items: center; */
+	display: flex;
+	justify-content: flex-start;
+	max-width: 250px;
+	min-height: 100vh;
+}
+.profile-avatar {
+	border-radius: 50%;
+	width: 40px; /* Makes the avatar look like a circle */
+}
