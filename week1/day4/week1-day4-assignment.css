@@ -15,7 +15,7 @@ body {
     /* Use padding, not margin, because of the background color */
 }
 
-.a:hover {
+.channels:hover {
     background-color: rgb(103, 136, 150);
     color: white;
 }
@@ -45,7 +45,9 @@ body {
     width: 40px /* Makes the avatar look like a circle */
 }
 
-.a {
+.channels a{
+    text-decoration: none;
+    color: black;
     padding-left: 10px;
     height: 45px;
     line-height: 45px;
