@@ -25,11 +25,11 @@ body{
 }
 #input-container {
     max-height: 100px;
-    margin-top: calc(100vh - 525px);
+    margin-top: calc(100vh - 540px);
     margin-bottom: 1vh;
     text-rendering: auto;
 }
-@media screen and (max-height: 650px) {
+@media screen and (max-height: 580px) {
     #input-container {
     max-height: 100px;
     margin-top: 25px;
