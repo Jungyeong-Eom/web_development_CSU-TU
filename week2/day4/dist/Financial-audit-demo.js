@@ -18,7 +18,7 @@ function writeFileAsync(dir, data) {
 function readFileAsync(dir) {
     return __awaiter(this, void 0, void 0, function* () {
         const readData = fs_1.readFileSync(dir, { encoding: 'utf8' });
-        const splitLineArray = readData.split('\r\n');
+        const splitLineArray = readData.split('\n');
         const splitCommaArray = [];
         for (var i = 0; i < splitLineArray.length; i++) {
             splitCommaArray[i] = splitLineArray[i].split(',');

@@ -18,7 +18,7 @@ async function writeFileAsync(dir: string, data: any): Promise<void> {
 }
 async function readFileAsync(dir: string): Promise<any> {
     const readData =  readFileSync(dir, {encoding:'utf8'});
-    const splitLineArray = readData.split('\r\n');
+    const splitLineArray = readData.split('\n');
 
     const splitCommaArray = [];
 
