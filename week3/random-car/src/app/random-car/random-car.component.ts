@@ -18,7 +18,13 @@ import { Component, OnInit } from '@angular/core';
 
 // It is undefined :sad
 export class RandomCarComponent implements OnInit {
-  listOfCars: string[] = ["Tesla Model X", "Ford Mustang", "Audi A7", "Infiniti G35", "Dodge Challenger"];
+  listOfCars: string[] = 
+  ["Tesla Model X", 
+  "Ford Mustang", 
+  "Audi A7", 
+  "Infiniti G35", 
+  "Dodge Challenger"];
+
   car:string = "";
 
   constructor() {
@@ -35,9 +41,9 @@ export class RandomCarComponent implements OnInit {
     console.log("is the car:", this.car);
   }
 
-  // addNewCar(): void{
-  //   this.listOfCars.push();
-  //   console.log("new car:");
-  // }
+  addNewCar(newCar: string): void{
+    this.listOfCars.push(newCar);
+    console.log("new car:", newCar);
+   }
 
 }

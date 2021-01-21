@@ -1,70 +1,36 @@
-/*
-  Directions: Use some input elements to make a basic form in your app component. 
-  When you click the button to submit the form, it pushes that information, 
-  as an object, into an array. Use *ngFor to loop over that array and show the information 
-  as a list somewhere on the page. Items in that list must be a child component.
-
-  Optional: Add a button to the child component that deletes that item from the list, 
-  using the @Output decorator
-*/
-
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
-
+//  Importing car service into parent component
+import { CarsService } from './cars.service';
 
 
 @Component({
-  selector: 'app-parent',
-  templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class ParentComponent implements OnInit {
+export class AppComponent {
   carsShowing: boolean = true;
 
-  carMake = ''
-  carModel = '';
-  carYear = '';
-  carColor = '';
-  email = '';
-
-  msg:string = '';
+  msg: string = '';
 
   carForm: FormGroup
 
-  cars = [
-    {
-      make: 'Honda',
-      model: 'Civic',
-      year:'2021',
-      color:'yellow', // is this a Taxi? lololol yellow cap
-      email:'asdf@gmail.com'
-    }, 
-    {
-      make: 'Honda',
-      model: 'Civic',
-      year:'2021',
-      color:'blue',
-      email:'asdff@gmail.com'
-    }, 
-    {
-      make: 'Honda',
-      model: 'Civic',
-      year:'',
-      color:'',
-      email:''
-    }
-  ];
+  cars = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private carsService: CarsService
+    ) {
 
     // We need to use 3 different kinds of validators
     // One of those could be the email validator  seems like completed.
     // the last one has an email validator
-    this.carForm = this.fb.group({
+      this.cars = carsService.Cars;
+      this.carForm = this.fb.group({
       make: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
       model: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(15)]], 
       year: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
@@ -77,7 +43,7 @@ export class ParentComponent implements OnInit {
     // this.carForm.patchValue({
     //   make: 'Hyundai', model: 'Elantra'})
     console.log('Car Form', this.carForm);
-    this.cars.push(this.carForm.value);
+    this.carsService.addCars(this.carForm.value);
   }
 
 
@@ -94,4 +60,9 @@ export class ParentComponent implements OnInit {
       }
     })
   }
+  
+  removeCar(index: number): void {
+    this.carsService.removeCar(index);
+  }
 }
+

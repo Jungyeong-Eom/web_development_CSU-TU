@@ -3,16 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
-import { RandomCarComponent } from './parent/random-car/random-car.component';
-import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './parent/child/child.component';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RandomCarComponent,
-    ParentComponent,
-    ChildComponent
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
