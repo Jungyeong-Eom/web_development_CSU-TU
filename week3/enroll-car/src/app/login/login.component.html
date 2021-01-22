@@ -1,0 +1,24 @@
+<div class="form-container">
+    <form [formGroup]="loginForm" id="loginForm">
+      <input 
+        formControlName="email" 
+        placeholder="Email" />
+  
+      <input 
+        formControlName="password" 
+        type="password" 
+        placeholder="Password" />
+  
+      <input 
+        formControlName="favoriteCar"
+        placeholder="Favorite car" />
+  
+      <button 
+        (click)="login()" 
+        [disabled]="loginForm.status === 'INVALID'">
+        Log In</button>
+  
+        <!-- <a routerLink="/cars-page">Log In</a> -->
+    </form>
+  </div>
+  

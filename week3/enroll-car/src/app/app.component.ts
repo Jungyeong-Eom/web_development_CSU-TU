@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgModule } from '@angular/core';
 //  Importing car service into parent component
 import { CarsService } from './cars.service';
+
+
 
 
 @Component({
@@ -12,17 +15,20 @@ import { CarsService } from './cars.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{         //Error!
+
   carsShowing: boolean = true;
 
   msg: string = '';
 
   carForm: FormGroup
 
+
   cars = [];
 
   constructor(
     private fb: FormBuilder,
+    private readonly router: Router,
     private carsService: CarsService
     ) {
 
@@ -48,8 +54,12 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+    
+
+    
     this.carForm.valueChanges.subscribe(val => {
       console.log('carForm val', val)
+
       if (this.carForm.status ==='INVALID') {
         // set p tag = "Form is invalid"
         this.msg = "Form is invalid";
@@ -60,6 +70,19 @@ export class AppComponent {
       }
     })
   }
+
+  login(): void {
+    const {favoriteCar} = this.carForm.value.favoriteCar
+    this.router.navigate(
+      ['/dealership-page', {favoriteCar: favoriteCar }],
+      { queryParams: { 
+        favoriteCar
+        } 
+      }
+    );
+  }
+
+  
   
   removeCar(index: number): void {
     this.carsService.removeCar(index);

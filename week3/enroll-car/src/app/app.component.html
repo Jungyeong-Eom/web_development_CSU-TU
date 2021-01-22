@@ -11,35 +11,9 @@
     make your inputs into a form. The form must have at least 5 form controls, 
     and 3 different kinds of Validators. If the form is invalid, 
     then display some text to the user and disable the submit button.--> 
-
-    <div *ngIf="carsShowing">
-      <div 
-        *ngFor="let car of cars" class="content" 
-        role="main">
-        <app-example [item]="car"
-        (deleteItem)="removeCar(i)"
-        ></app-example>
-      </div>
-    </div>
     
-    <!-- We had to make at least 5 control forms -->
-    <form [formGroup]="carForm">
-      <p>Car Make: (min 2, max 15)</p>
-      <input formControlName="make"/>
-      <p>Car Model: (min 4, max 15)</p>  
-      <input formControlName="model" />
-      <p>Car Year: (4 Years)</p>
-      <input formControlName="year" />
-      <p>Car Color: </p>
-      <input formControlName="color" />
-      <p>Email: </p>
-      <input formControlName="email" />
-      <p>{{ msg }}</p>
-    </form>
+    <router-outlet></router-outlet>
     
-    <button (click)="toggleCars()" 
-    [disabled]="carForm.status ==='INVALID'">
-    Toggle cars</button>
     
     
     
