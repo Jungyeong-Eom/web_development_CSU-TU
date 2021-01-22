@@ -1,7 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-
-import { Car } from '../interfaces/car.interface'; 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarsService } from '../cars.service';
+import { NgModule } from '@angular/core';
+import { Car } from '../interfaces/car.interface'
 
 @Component({
   selector: 'app-cars-page',
@@ -10,7 +13,26 @@ import { CarsService } from '../cars.service';
 })
 export class CarsPageComponent implements OnInit {
 
-  constructor(private readonly carsService: CarsService) { }
+  carsShowing: boolean = true;
+  msg: string = '';
+  carForm: FormGroup
+
+  cars = [];
+
+  constructor(
+    private readonly carsService: CarsService,
+    private fb: FormBuilder,
+    private readonly router: Router,
+    ) { 
+      this.cars = carsService.Cars;
+      this.carForm = this.fb.group({
+      make: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
+      model: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(15)]], 
+      year: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      color: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]]
+    });
+  }
 
   @Input() item: Car;
 
@@ -18,15 +40,36 @@ export class CarsPageComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.carsService.getCars());
+
+    this.carForm.valueChanges.subscribe(val => {
+      console.log('carForm val', val)
+
+      if (this.carForm.status ==='INVALID') {
+        // set p tag = "Form is invalid"
+        this.msg = "Form is invalid";
+      }
+      else {
+        // set p tag = "Form is valid"
+        this.msg = "Form is valid";
+      }
+    })
   }
 
-  removeItem(): void {
-    this.deleteItem.emit()
+  removeCar(index): void {
+    this.carsService.removeCar(index);
   }
 
   // Shows Cars log
   logCars(): void {
     console.log(this.carsService.getCars());
   }
+
+  toggleCars(): void {
+    // this.carForm.patchValue({
+    //   make: 'Hyundai', model: 'Elantra'})
+    console.log('Car Form', this.carForm);
+    this.carsService.addCars(this.carForm.value);
+  }
+
   
 }

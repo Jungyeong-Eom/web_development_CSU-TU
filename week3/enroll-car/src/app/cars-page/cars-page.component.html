@@ -1,3 +1,31 @@
-<!-- <p>{{ item.make }} {{ item.model }} {{item.year}} {{ item.color }} {{ item.email }}</p> -->
-<button (click)="removeItem()">Delete Item</button>
-<button (click)="logCars()">Log Cars</button>
+
+<div *ngIf="carsShowing">
+    <div 
+      *ngFor="let car of cars" class="content" 
+      role="main">
+      <app-example [item]="car"
+      (deleteItem)="removeCar(i)"
+      ></app-example>
+    </div>
+  </div>
+  
+  <!-- We had to make at least 5 control forms -->
+  <form [formGroup]="carForm">
+    <p>Car Make: (min 2, max 15)</p>
+    <input formControlName="make"/>
+    <p>Car Model: (min 4, max 15)</p>  
+    <input formControlName="model" />
+    <p>Car Year: (4 Years)</p>
+    <input formControlName="year" />
+    <p>Car Color: </p>
+    <input formControlName="color" />
+    <p>Email: </p>
+    <input formControlName="email" />
+    <p>{{ msg }}</p>
+  </form>
+  
+  <button (click)="toggleCars()" 
+  [disabled]="carForm.status ==='INVALID'">
+  Toggle cars</button>
+
+
