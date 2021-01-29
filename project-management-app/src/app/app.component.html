@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManagementApp</title> 
+  </head>
+
+<!-- Channels -->
+<!-- What part?-->
+<!-- Middle Panel -->
+  <body>
+    <!-- DO NOT remove the p tag -->
+    <!-- <p>
+      <ngb-alert [dismissible]="true">
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      </ngb-alert>
+    </p> -->
+    
+    <!-- By default, the tag for ALL should be highlighted -->
+    <!-- As we change channel/cat we change the highlighted area -->
+
+    <div id="container" class="container-fluid">
+      <div class="row">
+        <div id="navigation-col" class="col">
+          <div id="navigation-items">
+            <div class="team-name"><img src='assets/Artboard_2(1).svg' width=50px; height=70px;>
+              groove</div>
+            <div class="category">category</div>
+            <div (click)="moveAll()" class="a">All</div>
+            <div (click)="moveInternal()" class="a">Internal Comms App</div>
+            <div (click)="moveGeneral()" class="a">General Work</div>
+            <div (click)="moveOther()" class="a">Other</div>
+          
+          </div>
+        </div>
+        
+        <div id="contents-container" class="col">
+            <!-- display contents page-->
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
+
+

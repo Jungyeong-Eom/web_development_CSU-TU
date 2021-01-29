@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&family=Ubuntu:wght@500;700&display=swap');
+
+.cat-title {
+    font-size: 50px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-group {
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.add-task {
+    margin-bottom: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+  
+.example-radio-button {
+    margin: 5px;
+}
+
+.btn {
+    width: 50%;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+#back-btn {
+    float:left;
+}
+
+#delete-btn {
+    float:right;
+}
+
+.add-date {
+    width: 300px;
+    height: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+
+:host ::ng-deep .mat-radio-button {
+    background-color: #F7F9F9;
+    border-radius: 0.4rem;
+    padding: 20px;
+}
+
+
+::ng-deep .mat-radio-label {
+    color: black;
+    font-size: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0px;
+}
+
+::ng-deep .mat-form-field {
+    margin-top:25px;
+    width: 300px;
+    background-color:none;
+}
+
+::ng-deep .form-control {
+    height: 50px;
+    font-size: 15px;
+}
+
+:host ::ng-depp .mat-select-value-text > .ng-star-inserted {
+    font-size: 18px !important;
+    margin-left: 0px;
+    color: black;
+}
+
+.example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+    margin-left: 5px;
+  }
+
+:host ::ng-deep .ng-star-inserted {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    height: 30px;
+}
+
+mat-option {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+}
+
+:host ::ng-deep .mat-input-element {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+}
+
+:host ::ng-deep .mat-form-field-flex {
+    background-color : white;
+}
+

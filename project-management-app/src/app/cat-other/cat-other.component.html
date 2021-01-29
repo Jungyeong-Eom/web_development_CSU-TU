@@ -1,0 +1,95 @@
+<h1 class='cat-title'>Other</h1>
+<!-- <button (click)="moveView()">move viewTask</button> -->
+
+<div class="btn-group">
+    <button mat-raised-button color="warn" (click)="deleteOtherTask()">Delete All Tasks</button>
+</div>
+
+
+<!-- Input field for add a new  -->
+
+<form [formGroup]="taskForm" class="add-task" (ngSubmit)="handleSubmit($event)">
+    <input formControlName="task" type="text" [(ngModel)]="newTask" class="form-control" 
+    placeholder="Add a task" (keyup)="handleKeyUp($event)">
+</form>
+
+<!-- show tasks -->
+
+<!-- <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="currentTask">
+    <ng-container *ngFor="let task of taskArray">     
+    <mat-radio-button
+        *ngIf="task.category === null"
+        (click)='checkedButton(task.task)'
+        [color]="color" 
+        class="example-radio-button" 
+        [value]="task.task">
+        
+        <ng-container *ngIf="task.category === null"> 
+            {{ task.task }}<span *ngIf="task.date !== null 
+            && task.date !== 'Invalid date'">
+            <img src='assets/calendar-icon.svg'
+            width = 18px;
+            height = 18px
+            margin-right = 5px;
+            alt='error'>
+            {{ task.date }}</span>
+        </ng-container>
+        </mat-radio-button>   
+    </ng-container>
+</mat-radio-group> -->
+
+<div cdkDropListGroup>
+  <div class="example-container">
+      <h2>To do</h2>
+  
+      <div
+        cdkDropList
+        #taskArrayList="cdkDropList"
+        [cdkDropListData]="taskArray"
+        [cdkDropListConnectedTo]="[doneTaskList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <ng-container  *ngFor="let task of taskArray">
+        <ng-container *ngIf="task.category === null">
+        <div class="example-box" cdkDrag
+        (click) ='checkedButton(task.task)'
+        [value]="task.task">
+        {{task.task}}
+          <span *ngIf="task.date !== null 
+          && task.date !== 'Invalid date'">
+          {{ task.date }}</span>
+        </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    
+    <div class="example-container">
+      <h2>Done</h2>
+    
+      <div
+        cdkDropList
+        #doneTaskList="cdkDropList"
+        [cdkDropListData]="doneTask"
+        [cdkDropListConnectedTo]="[taskArrayList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <ng-container *ngFor="let done of doneTask">
+        <ng-container *ngIf="done.category === null">
+        <div  class="example-box" cdkDrag
+        [value]="done.task">
+        {{done.task}}
+          <span *ngIf="done.date !== null 
+          && done.date !== 'Invalid date'">
+          {{ done.date }}</span>
+          </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    
+    
+</div>
