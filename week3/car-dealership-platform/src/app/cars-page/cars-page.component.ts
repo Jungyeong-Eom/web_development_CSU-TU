@@ -1,34 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarsService } from '../cars.service';
 import { NgModule } from '@angular/core';
-//  Importing car service into parent component
-import { CarsService } from './cars.service';
-
+import { Car } from '../interfaces/car.interface'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-cars-page',
+  templateUrl: './cars-page.component.html',
+  styleUrls: ['./cars-page.component.css']
 })
-export class AppComponent {
+export class CarsPageComponent implements OnInit {
+
   carsShowing: boolean = true;
-
   msg: string = '';
-
   carForm: FormGroup
 
   cars = [];
 
   constructor(
+    private readonly carsService: CarsService,
     private fb: FormBuilder,
-    private carsService: CarsService
-    ) {
-
-    // We need to use 3 different kinds of validators
-    // One of those could be the email validator  seems like completed.
-    // the last one has an email validator
+    private readonly router: Router,
+    ) { 
       this.cars = carsService.Cars;
       this.carForm = this.fb.group({
       make: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
@@ -38,18 +33,17 @@ export class AppComponent {
       email: [null, [Validators.required, Validators.email]]
     });
   }
-  
-  toggleCars(): void {
-    // this.carForm.patchValue({
-    //   make: 'Hyundai', model: 'Elantra'})
-    console.log('Car Form', this.carForm);
-    this.carsService.addCars(this.carForm.value);
-  }
 
+  @Input() item: Car;
+
+  @Output() deleteItem: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
+    console.log(this.carsService.getCars());
+
     this.carForm.valueChanges.subscribe(val => {
       console.log('carForm val', val)
+
       if (this.carForm.status ==='INVALID') {
         // set p tag = "Form is invalid"
         this.msg = "Form is invalid";
@@ -60,9 +54,22 @@ export class AppComponent {
       }
     })
   }
-  
-  removeCar(index: number): void {
+
+  removeCar(index): void {
     this.carsService.removeCar(index);
   }
-}
 
+  // Shows Cars log
+  logCars(): void {
+    console.log(this.carsService.getCars());
+  }
+
+  toggleCars(): void {
+    // this.carForm.patchValue({
+    //   make: 'Hyundai', model: 'Elantra'})
+    console.log('Car Form', this.carForm);
+    this.carsService.addCars(this.carForm.value);
+  }
+
+  
+}
