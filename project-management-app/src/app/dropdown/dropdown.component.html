@@ -1,0 +1,10 @@
+
+<mat-form-field appearance="fill">
+    <mat-label>Select a category</mat-label>
+    <mat-select [formControl]="categoriesControl" required>
+        <mat-option *ngFor="let cat of categories" [value]="cat.value">
+            {{cat.viewValue}}
+        </mat-option>
+    </mat-select>
+    <mat-error *ngIf="categoriesControl.hasError('required')">Please choose a category</mat-error>
+</mat-form-field>

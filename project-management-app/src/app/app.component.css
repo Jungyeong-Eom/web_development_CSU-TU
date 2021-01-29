@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&family=Ubuntu:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.category {
+    background-color: #18324E;
+    border-radius: 10px;
+    padding: 15px;
+    color:white;
+    font-family: 'Cabin', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.team-name {
+    text-align: left;
+    font-family: 'Lobster', cursive;
+    font-size:65px;
+    color:#D16666;
+    margin-bottom: 40px;
+}
+
+.a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Cabin', sans-serif;
+    margin-top: 15px;
+    background-color: none;
+    color: white;
+    /* padding will be better to control flex elem chick this out*/
+}
+div.a:active {
+    background-color:white;
+    color:#D16666;
+    border-radius: 10px;
+}
+
+
+.a:hover {
+    background-color: #D16666;
+    color:white;
+    border-radius: 10px;
+    /*hover!*/
+}
+
+.a.active {
+    background-color: #18324E;
+    color:white;
+    border-radius: 10px;
+    /*hover!*/
+}
+
+body {
+    margin: 0;
+}
+
+#container,
+#container > .row {
+    /* background-color: blue; */
+    min-height: 100vh;
+}
+
+#contents-container {
+    margin: 0 10rem;
+    /* display: flex;
+    flex-flow: row */
+}
+
+#navigation-col{
+    flex: 320px 0 0;
+    background-color: #2C4251
+}
+/* do ctrl + / */
+/* use media query for the categories*/
+@media screen and (max-width: 300px) {
+
+}

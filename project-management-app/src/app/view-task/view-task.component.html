@@ -1,0 +1,83 @@
+<h1 class='cat-title'>View Task</h1>
+<!-- Back to Tasks Button and Delete Task button -->
+<!-- <div class="btn">
+    <div class="btn-group btn-group-toggle">
+        <button mat-raised-button color="primary">Back to Tasks</button>
+    </div>
+
+    <div class="btn-group btn-group-toggle">
+        <button mat-raised-button color="warn">Delete Task</button>
+    </div>
+</div> -->
+
+<!-- Back to Tasks Button and Delete Task button -->
+<span class="btn">
+    <button mat-raised-button id="back-btn" color="primary"
+    (click)='moveBack()'>Back to Tasks</button>
+</span>
+<span class="btn" >
+    <button mat-raised-button id="delete-btn" color="warn"
+    (click)='deleteCurrentTask()'
+    >Delete Task</button>
+</span>
+    
+<!-- show current selected task-->
+<ng-container  *ngFor="let task of taskArray">
+    <ng-container *ngIf="task.checked === true">
+    <div class="example-box" 
+    [value]="task.task">
+    {{task.task}}
+    </div>
+      </ng-container>
+</ng-container>
+<!-- <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group">
+    <ng-container *ngFor="let task of taskArray">     
+        <mat-radio-button
+            *ngIf="task.checked === true"
+            [color]="color" 
+            class="example-radio-button" 
+            [value]="task.task"
+            [checked]="task.checked">
+
+            <ng-container *ngIf="task.checked === true"> 
+                {{ task.task }}
+            </ng-container>
+        </mat-radio-button>
+    </ng-container>
+</mat-radio-group> -->
+
+<!-- add a due date  -->
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Add a due date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> -->
+
+<!-- add a due date  -->
+<form [formGroup]="dateForm" class="add-date" (ngSubmit)="handleSubmit($event)">
+    <!-- <input type="text" class="form-control" 
+    placeholder="Add a due date(MM/DD/YY)"  (keyup.enter)="handleKeyUp($event)"> -->
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Add a due date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- add a category -->
+    <mat-form-field appearance="fill"> 
+        <mat-label>Add a category</mat-label>
+        <mat-select formControlName="category" [(ngModel)]='selectedCat'>
+            <mat-option  (click)='catClick()' value="internal-comms-app">Internal comms app</mat-option>
+            <mat-option  (click)='catClick()' value="General Work">General work</mat-option>
+            <mat-option  (click)='catClick()' value="Other">Other</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+
+
